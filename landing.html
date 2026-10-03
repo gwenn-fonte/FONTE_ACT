@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter — A Fan Landing Page</title>
+  <meta name="description" content="A student landing page project exploring the Harry Potter: Hogwarts, its core characters, and a photo gallery.">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="landing.css" rel="stylesheet">
+  <script>
+    // Guard: only logged-in users can see this page
+    if (sessionStorage.getItem('loggedIn') !== 'true') {
+      window.location.replace('login.html');
+    }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="hero-section" id="home">
+  <nav class="navbar navbar-expand-lg hero-nav" aria-label="Main navigation">
+    <a class="hero-logo" href="#home">
+      <img src="images/crest.jpg" alt="Hogwarts crest">
+      <span class="brand-text">Harry<br>Potter</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="hero-links ms-auto">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="login.html" id="logoutLink">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row hero-body align-items-center g-4">
+    <div class="col-lg-6">
+      <h1>Welcome to Harry Potter</h1>
+      <p>Harry Potter is a fantasy universe created by British author J.K. Rowling, first introduced through the book series in 1997. It follows a young wizard's journey through Hogwarts School of Witchcraft and Wizardry and has since expanded into films, theme parks, and spin-off stories.</p>
+      <a href="#about" class="btn-readmore">Start Reading</a>
+    </div>
+    <div class="col-lg-6 hero-character-art">
+      <img src="images/castle.jpg" alt="Illustrated collage of Harry Potter, Hermione Granger, and Ron Weasley in front of Hogwarts castle">
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h2 id="about-heading">About Harry Potter</h2>
+        <p>Set primarily at Hogwarts School of Witchcraft and Wizardry, the series follows young wizard Harry Potter as he learns magic, forms lasting friendships, and confronts a dark wizard responsible for his parents' death.</p>
+        <p>Beyond the seven core books, the franchise has grown into eight feature films, a stage play, spin-off movies, and one of the most visited fictional universes in the world &mdash; complete with theme parks and museum exhibits dedicated to its magic.</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="images/harry.jpg" alt="Hogwarts castle at dusk, seen across the lake">
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section" id="characters" aria-labelledby="characters-heading">
+    <h2 class="text-center" id="characters-heading">Meet the Characters</h2>
+    <p class="mx-auto text-center">Three students whose friendship carries the series &mdash; each with a different strength that gets the trio through Hogwarts.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="character-card">
+          <img src="images/harryp.jpg" alt="Harry Potter, wearing round glasses and his Gryffindor robes">
+          <h3>Harry Potter</h3>
+          <p>The boy who lived, and the central hero of the story.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="character-card">
+          <img src="images/hermione.jpg" alt="Hermione Granger holding a stack of books">
+          <h3>Hermione Granger</h3>
+          <p>Harry's brilliant and resourceful best friend.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="character-card">
+          <img src="images/ron.jpg" alt="Ron Weasley in his Gryffindor uniform">
+          <h3>Ron Weasley</h3>
+          <p>Harry's loyal friend from a proud wizarding family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Gallery</h2>
+    <p>A few favorite moments from the trio's years at Hogwarts.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="gallery-frame">
+          <img src="images/trio.jpg" alt="Harry, Ron, and Hermione walking through a Hogwarts corridor">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="gallery-frame">
+          <img src="images/trio2.jpg" alt="The trio in the Great Hall during a house feast">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="gallery-frame">
+          <img src="images/trio3.jpg" alt="The trio outside near Hagrid's hut">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Student Project — Landing Page Activity. Not affiliated with Warner Bros. or J.K. Rowling.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Logout: clear the session, then go to login
+  document.getElementById('logoutLink').addEventListener('click', function () {
+    sessionStorage.removeItem('loggedIn');
+  });
+</script>
+</body>
+</html>

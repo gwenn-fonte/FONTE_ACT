@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="validation.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>Log In</h2>
+    <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+
+    <form id="loginForm" novalidate>
+
+      <div class="input-group">
+        <input type="text" id="username" name="username" placeholder="Username" autocomplete="username">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </span>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        </span>
+      </div>
+
+      <div class="options-row">
+        <label><input type="checkbox" name="remember" style="width:auto;"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" id="loginBtn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

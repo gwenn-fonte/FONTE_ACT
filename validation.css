@@ -1,0 +1,33 @@
+/* Extra styles for jQuery Validation + messages + lockout */
+.card { max-height: 95vh; overflow-y: auto; }
+
+label.error {
+  display: block;
+  text-align: left;
+  color: #ffd6d6;
+  font-size: 12px;
+  margin: -8px 0 10px 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.input-group input.error { box-shadow: 0 0 0 2px #ff6b6b; }
+.input-group input.valid { box-shadow: 0 0 0 2px #6bdc8b; }
+
+.form-message {
+  display: none;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+}
+.form-message.show { display: block; }
+.form-message.error   { background: rgba(200, 40, 40, 0.75); }
+.form-message.success { background: rgba(30, 140, 70, 0.8); }
+.form-message.warning { background: rgba(190, 120, 0, 0.8); }
+
+.card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
